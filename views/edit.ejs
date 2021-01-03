@@ -1,0 +1,28 @@
+<body>
+    <h1>Edit Country</h1>
+  
+    <% if (errors !=undefined) { %>
+      <ul>
+        <% errors.forEach((error)=>{ %>
+          <li>
+            <%= error.msg %>
+          </li>
+          <% }) %>
+      </ul>
+      <% } %>
+  
+        <form action="/edit/<%= co_code %>" method="POST">
+          <label for="fname">Country Code</label>
+          <input type="text" name="co_code" value="<%= co_code %>"><br>
+          <label for="lname">Country name</label>
+          <input type="text" name="name" value="<%= co_name %>"><br>
+          <label for="lname">Country details</label>
+          <textarea name="details" rows="5" cols="40"><%= co_details %></textarea>
+          <input type="submit" value="Update">
+  
+          <br><br>
+        </form>
+        <!--Back to the home page-->
+        <a href="/">Home</a>
+        
+  </body>

@@ -1,0 +1,34 @@
+<!--CSS Style for borders-->
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    </style>
+    
+    <!--Display the data retrieved from database use a for loop to get data-->
+    <h1>Countries</h1>
+    
+    <!--Button that will add a country to the list-->
+    <button onclick="window.location.href='/addCountry'">Add Country</button>
+    <button onclick="window.location.href='/search'">Search</button>
+    <br><br>
+    <table>
+        <tr>
+            <th>Country Code</th>
+            <th>Country Name</th>
+            <th>Country Details</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+        <% for(var i=0; i<country.length; i++) { %>
+        <tr>
+            <td><%= country[i].co_code %></td>
+            <td><%= country[i].co_name %></td>
+            <td><%= country[i].co_details %></td>
+            <td><a href="/edit/<%= country[i].co_code %>">Update</a></td>
+            <td><a href="/delete/<%= country[i].co_code %>">Delete</a></td>
+        </tr>
+        <%} %>
+    </table>
+    <br><br>
+    <a href="/">Home</a>

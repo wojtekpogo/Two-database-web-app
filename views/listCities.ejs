@@ -1,0 +1,38 @@
+<!--CSS Style for borders-->
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    </style>
+    
+    <!--Display the data retrieved from database use a forEach to get data-->
+    <h1>Cities</h1>
+ 
+    <table>
+        <tr>
+            <th>City Code</th>
+            <th>Country Code</th>
+            <th>City Name</th>
+            <th>Population</th>
+            <th>By The Sea</th>
+            <th>Area</th>
+            <th>Action
+                
+            </th>
+            
+        </tr>
+        <% for(var i=0; i<city.length; i++) { %>
+        <tr>
+            <td><%= city[i].cty_code %></td>
+            <td><%= city[i].co_code %></td>
+            <td><%= city[i].cty_name %></td>
+            <td><%= city[i].population %></td>
+            <td><%= city[i].isCoastal %></td>
+            <td><%= city[i].areaKM %></td>
+            <td><a href="/allDetails/<%= city[i].cty_code %>">All Details</a></td>
+            <td><a href="/deleteCity/<%= city[i].cty_code %>">Delete</a></td>
+        </tr>
+        <%} %>
+    </table>
+    <br><br>
+    <a href="/">Home</a> <!--Back to the home page-->

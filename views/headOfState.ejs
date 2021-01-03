@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--CSS Style for borders-->
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    </style>
+<h1>Heads Of State</h1><br>
+<button onclick="window.location.href='/addHeadOfState'">Add Head Of State</button><br></br>
+
+<table>
+    <tr>
+        <th>Country Code</th>
+        <th>Head Of State</th>
+    
+    </tr>
+<% hOs.forEach((heads) => { %>
+    <tr>
+        <td><%= heads._id %></td>
+        <td><%= heads.headOfState %></td>
+    </tr>
+    <%}) %>
+</table>
+<a href="/">Home</a>
